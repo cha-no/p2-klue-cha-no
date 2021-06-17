@@ -46,13 +46,33 @@ entity 2: 오라클
 
 ## Problem
 
+- Input의 변경
 
+기존의 Input
+```
+ex) 이순신 장군은 조선 출신이다.
+entity1 : 이순신, entity2 : 조선
+
+[CLS] 이순신 [SEP] 조선 [SEP] 이순신 장군은 조선 출신이다. [SEP]
+```
+
+엔티티 강조를 위해 엔티티 앞뒤로 토큰을 붙입니다.
+
+```
+[CLS] [ENT1] 이순신 [/ENT1] 장군은 [ENT2] 조선 [/ENT2] 출신이다. [SEP]
+```
+
+BERT형식으로 Input을 변경했습니다.
+
+```
+[CLS] [ENT1] 이순신 [/ENT1] 장군은 [ENT2] 조선 [/ENT2] 출신이다. [SEP] 이 문장에서 [ENT1] 이순신 [/ENT1] 와 [ENT2] 조선 [/ENT2] 의 관계는 무엇인가? [SEP]
+```
 
 ### 회고록
 
 ## usage
 ```python
-## 학습 단일모델 최고 성능 0.792
+## train
 python train.py --epochs 10 --max_len 300 --model xlm-roberta-large --batch_size 16 --preprocess convert9 --tokenize tokenized_dataset1 --drop 0.5 --seed 2022
 
 ## inference
