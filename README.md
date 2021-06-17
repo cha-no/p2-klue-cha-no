@@ -4,7 +4,6 @@
 
 - [프로젝트 소개](#프로젝트-소개)
 - [Problem](#problem)
-  - [회고록](#회고록)
 - [Usage](#usage)
 
 ## 프로젝트 소개
@@ -67,8 +66,6 @@ BERT형식으로 Input을 변경했습니다.
 ```
 [CLS] [ENT1] 이순신 [/ENT1] 장군은 [ENT2] 조선 [/ENT2] 출신이다. [SEP] 이 문장에서 [ENT1] 이순신 [/ENT1] 와 [ENT2] 조선 [/ENT2] 의 관계는 무엇인가? [SEP]
 ```
-
-### 회고록
 
 ## usage
 ```python
