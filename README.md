@@ -1,28 +1,56 @@
-# Pstage_02_KLUE_T1117_신찬호
-* 자연어처리를 이용한 관계 추출
+# KLUE
 
-## training
-### transformer 모듈 버전
-* python train.py
-### pytorch 버전
-* python train_pytorch.py
-* ex) python train.py --seed 2021 --epochs 10 --model xlm-roberta-large
+# 목차
 
-### inference
-* python inference.py --model [model_path]
-* ex) python inference.py --model xlm-roberta-large/checkpoint-2000
+- [프로젝트 소개](#프로젝트-소개)
+- [Problem](#problem)
+  - [회고록](#회고록)
+- [Usage](#usage)
 
-### loss
-* crossentropy, f1loss, focalloss, label_smoothing_loss가 있음
+## 프로젝트 소개
 
-### load_data
-* 데이터를 불러들여오고, tokenize하는 함수
+### 문장 내 개체간 관계 추출(Dialogue State Trac
 
-### preprocess
-* 데이터 전처리 함수
+- 관계 추출(Relation Extraction)은 문장의 단어(Entity)에 대한 속성과 관계를 예측하는 문제입니다.
+- 관계 추출은 지식 그래프 구축을 위한 핵심 구성 요소로, 구조화된 검색, 감정 분석, 질문 답변하기, 요약과 같은 자연어처리 응용 프로그램에서 중요합니다.
+
+<img src = "https://user-images.githubusercontent.com/59329586/122316470-e7eae480-cf56-11eb-9835-0ad65a978041.png" width="70%" height="35%">
+
+- 위 그림의 예시와 같이 요약된 정보를 사용해 QA 시스템 구축과 활용이 가능하며, 이외에도 요약된 언어 정보를 바탕으로 효율적인 시스템 및 서비스 구성이 가능합니다.
+
+
+### 목적
+
+- 목적은 문장, 엔티티, 관계에 대한 정보를 통해 문장과 엔티티 사이의 관계를 추론하는 모델을 학습시킵니다.
+
+- input
+```
+sentence: 오라클(구 썬 마이크로시스템즈)에서 제공하는 자바 가상 머신 말고도 각 운영 체제 개발사가 제공하는 자바 가상 머신 및 오픈소스로 개발된 구형 버전의 온전한 자바 VM도 있으며, GNU의 GCJ나 아파치 소프트웨어 재단(ASF: Apache Software Foundation)의 하모니(Harmony)와 같은 아직은 완전하지 않지만 지속적인 오픈 소스 자바 가상 머신도 존재한다.
+entity 1: 썬 마이크로시스템즈
+entity 2: 오라클
+
+```
+- output : 단체:별칭
+
+
+
+### 평가방법
+
+- 모델은 **Accuracy** 로 평가됩니다.
+
+### 데이터셋
+
+- 데이터셋의 예시입니다.
+
+<img src = "https://user-images.githubusercontent.com/59329586/122322094-dce88200-cf5f-11eb-9f79-3a5ec2113892.png" width="70%" height="35%">
+
+## Problem
+
+
+
+### 회고록
 
 ## usage
-
 ```python
 ## 학습 단일모델 최고 성능 0.792
 python train.py --epochs 10 --max_len 300 --model xlm-roberta-large --batch_size 16 --preprocess convert9 --tokenize tokenized_dataset1 --drop 0.5 --seed 2022
