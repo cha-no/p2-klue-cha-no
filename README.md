@@ -13,7 +13,7 @@
 - 관계 추출(Relation Extraction)은 문장의 단어(Entity)에 대한 속성과 관계를 예측하는 문제입니다.
 - 관계 추출은 지식 그래프 구축을 위한 핵심 구성 요소로, 구조화된 검색, 감정 분석, 질문 답변하기, 요약과 같은 자연어처리 응용 프로그램에서 중요합니다.
 
-<img src = "https://user-images.githubusercontent.com/59329586/122316470-e7eae480-cf56-11eb-9835-0ad65a978041.png" width="70%" height="35%">
+<img src = "https://user-images.githubusercontent.com/59329586/122631291-ce3bcf80-d105-11eb-9e01-aee22f146fc6.png" width="70%" height="35%">
 
 - 위 그림의 예시와 같이 요약된 정보를 사용해 QA 시스템 구축과 활용이 가능하며, 이외에도 요약된 언어 정보를 바탕으로 효율적인 시스템 및 서비스 구성이 가능합니다.
 
